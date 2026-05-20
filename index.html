@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>옛한글 변환기 — 訓民正音</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div class="page-wrap">
+
+    <!-- 상단 장식선 -->
+    <div class="border-stripe top"></div>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <p class="header-sub">訓民正音</p>
+        <h1 class="site-title">옛한글 변환기</h1>
+        <p class="header-desc">나·랏 ᄆᆞᆯᄊᆞ·미 — 훈민정음 시대의 글자로 변환합니다</p>
+      </div>
+    </header>
+
+    <main class="converter">
+
+      <!-- 입력 -->
+      <section class="card input-card">
+        <label class="card-label" for="input-text">
+          <span class="label-deco">◈</span> 현대 한글 입력
+        </label>
+        <textarea
+          id="input-text"
+          class="text-area"
+          placeholder="여기에 문장을 입력하세요&#10;예) 하늘과 바람과 별과 사람"
+          rows="5"
+          spellcheck="false"
+        ></textarea>
+        <div class="char-count"><span id="char-count">0</span>자</div>
+      </section>
+
+      <!-- 변환 버튼 -->
+      <div class="convert-zone">
+        <button id="convert-btn" class="btn-convert">
+          <span class="btn-label">변  환</span>
+          <span class="btn-arrow">↓</span>
+        </button>
+        <button id="clear-btn" class="btn-clear">초기화</button>
+      </div>
+
+      <!-- 출력 -->
+      <section class="card output-card">
+        <label class="card-label">
+          <span class="label-deco">◈</span> 옛 한글 출력
+        </label>
+        <div id="output-box" class="output-box">
+          <span class="output-placeholder">변환 결과가 여기에 표시됩니다</span>
+        </div>
+        <div class="action-row">
+          <button id="copy-btn" class="btn-action" disabled>
+            📋 복사하기
+          </button>
+          <button id="explain-btn" class="btn-action" disabled>
+            🔍 변환 과정 보기
+          </button>
+        </div>
+      </section>
+
+      <!-- 변환 설명 패널 -->
+      <section id="explanation-panel" class="explanation-panel hidden">
+        <div class="panel-header">
+          <h2 class="panel-title">📖 변환 과정 설명</h2>
+          <button id="close-explain-btn" class="btn-close" aria-label="닫기">✕</button>
+        </div>
+        <div id="explanation-content" class="panel-content"></div>
+        <p class="panel-note">
+          ※ 사전에 등록된 단어는 역사적 형태를 그대로 사용하며,<br />
+          미등록 단어는 아래아·구개음화 규칙을 적용합니다 (부정확할 수 있음).
+        </p>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <nav class="footer-nav">
+        <a href="about.html">옛한글이란?</a>
+        <span class="sep">·</span>
+        <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <p class="footer-copy">훈민정음 반포 1446년 · 세종대왕 어제</p>
+    </footer>
+
+    <!-- 하단 장식선 -->
+    <div class="border-stripe bottom"></div>
+
+  </div><!-- .page-wrap -->
+
+  <script src="assets/js/dictionary.js"></script>
+  <script src="assets/js/converter.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
